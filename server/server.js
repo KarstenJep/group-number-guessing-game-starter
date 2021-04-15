@@ -22,9 +22,9 @@ app.get( '/guesses', (req, res)  => {
 
 // POST
 app.post('/guesses', (req, res) => {
-  let newGuess = req.body;
+  let newInputs = req.body;
   // console.log('got a new Guess, serverside ... ', newGuess);
-  guesses.push(newGuess);
+  guesses.push(newInputs);
   res.sendStatus(201);
 })
 
@@ -32,3 +32,7 @@ app.post('/guesses', (req, res) => {
 app.listen(PORT, () => {
   console.log ('Server is running on port', PORT)
 })
+
+function randomNumber() {
+  return Math.floor((Math.random()* 25)+1);
+ };
