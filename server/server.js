@@ -9,7 +9,24 @@ app.use(bodyParser.urlencoded({extended:true}))
 // Serve up static files (HTML, CSS, Client JS)
 app.use(express.static('server/public'));
 
+// Initialize our guesses array
+let guesses = [];
+
 // GET & POST Routes go here
+
+// GET
+app.get( '/guesses', (req, res)  => {
+  // console.log(`Request for guesses serverside ...  guesses);
+  res.send( guesses );
+});
+
+// POST
+app.post('/guesses', (req, res) => {
+  let newGuess = req.body;
+  // console.log('got a new Guess, serverside ... ', newGuess);
+  guesses.push(newGuess);
+  res.sendStatus(201);
+})
 
 
 app.listen(PORT, () => {
