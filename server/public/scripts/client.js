@@ -29,8 +29,8 @@ function addInputs() {
       console.log('error from server', error);
       alert('sorry, could not get guesses. Try again later.');
     })
-  $('#input1').val(''),
-  $('#input2').val(''),
+  $('#input1').val('');
+  $('#input2').val('');
 }
 
 function randomNumber() {
