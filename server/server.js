@@ -35,6 +35,4 @@ app.listen(PORT, () => {
 
 function randomNumber() {
   return Math.floor((Math.random()* 25)+1);
- };function randomNumber() {
-  return Math.floor((Math.random()* 25)+1);
  };
