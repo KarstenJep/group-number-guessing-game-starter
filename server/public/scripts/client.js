@@ -69,3 +69,17 @@ function render( checkedguesses ) {
       `)
     }
 }
+function render( checkedguesses ) {
+  $('#total-guesses').empty();
+  $('#guess-history').empty();
+    for (let round of checkedguesses){
+      console.log(`${round.player1}, ${round.player2}`);
+      $('#total-guesses').append(`
+        <div class="guessgame">
+        <p>Round ${round.roundNumber}:</p>
+        <p>Player 1: ${round.player1}</p>
+        <p>Player 2: ${round.player2}</p>
+        </div>
+      `)
+    }
+}
