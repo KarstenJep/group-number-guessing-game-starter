@@ -16,31 +16,30 @@ let guesses = [];
 
 // GET
 app.get( '/guesses', (req, res)  => {
-  // console.log(`Request for guesses serverside ...  guesses);
+  // console.log(`Request for guesses serverside ...  guesses`);
   res.send( guesses );
 });
 
 // POST
 app.post('/guesses', (req, res) => {
   let newInputs = req.body;
-  // console.log('Checking format of newInputs', newInputs);
   guesses.push(newInputs);
   editGuesses();
   res.sendStatus(201);
   console.log('got a new Guess, serverside ... ', newInputs);
-})
+});
 
 app.post('/restart', (req, res) => {
   guesses = [];
   randomNum = randomNumber();
   console.log('Reinitializing guesses');
   res.sendStatus(201);
-})
+});
 
 
 app.listen(PORT, () => {
   console.log ('Server is running on port', PORT)
-})
+});
 
 function randomNumber() {
   return Math.floor((Math.random()* 25)+1);

@@ -52,15 +52,15 @@ function addInputs() {
     method: 'POST',
     url: '/guesses',
     data: newInputs,
-})
+  });
     .then(function (response) {
       console.log('added guesses');
       getGuesses();
-    })
+    });
     .catch( function (error) {
       console.log('error from server', error);
       alert('sorry, could not get guesses. Try again later.');
-    })
+    });
   $('#input1').val('');
   $('#input2').val('');
 }
